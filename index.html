@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="TruthLens — pause, check the evidence, and understand what you see online.">
+  <title>Truth Lens — See the Real Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="nav">
+    <a class="brand" href="#home" aria-label="Truth Lens home"><span class="brand-mark"><span></span></span><span>TRUTH LENS<span class="dot">.</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#verify">Verify Information</a>
+      <a class="nav-link" href="#how">How It Works</a>
+      <a class="nav-link" href="#about">About</a>
+    </nav>
+    <a class="nav-cta" href="#verify">VERIFY NOW <span>→</span></a>
+    <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> THINK CLEAR. CHECK FIRST.</div>
+        <h1>See beyond<br>the <span>headline.</span></h1>
+        <p class="hero-text">A message forwarded to you? A headline that sounds unbelievable? Take a moment to examine it. TruthLens helps you slow down, question what you see, and follow the evidence.</p>
+        <div class="hero-actions"><a class="button primary" href="#verify">VERIFY INFORMATION <span>→</span></a><a class="text-link" href="#how">Discover how it works <span>↓</span></a></div>
+        <div class="hero-note"><span class="shield">✓</span> A clearer way to think before you share.</div>
+      </div>
+      <div class="hero-visual reveal delay-1" aria-label="Truth Lens fact-checking illustration">
+        <div class="hero-image-frame"><img class="hero-image" src="assets/truthlens-hero.jpg" alt="Magnifying glass examining a news article with a verification shield, globe and smartphone"></div>
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="floating-card card-top"><span class="pulse"></span> CHECK THE SOURCE <b>01</b></div>
+        <div class="floating-card card-bottom"><span class="mini-shield">✓</span><div><small>YOUR NEXT STEP</small><strong>Follow the evidence</strong></div></div>
+      </div>
+    </section>
+
+    <section class="principles reveal">
+      <div class="principle"><span>01</span><b>Evidence over assumptions</b><small>Look beyond the first impression.</small></div>
+      <div class="principle"><span>02</span><b>Context matters</b><small>Dates, details, and original sources.</small></div>
+      <div class="principle"><span>03</span><b>Honest uncertainty</b><small>It is okay not to know yet.</small></div>
+      <div class="principle"><span>04</span><b>Made for everyone</b><small>Simple tools for clearer thinking.</small></div>
+    </section>
+
+    <section id="verify" class="verify-section">
+      <div class="section-head reveal"><div class="eyebrow">THE TRUTHLENS CHECK</div><h2>What would you<br><span>like to check?</span></h2><p>A message, a link, an image, or a document. Start with what you have and take a closer look.</p></div>
+      <div class="verify-shell reveal delay-1">
+        <div class="verify-topline"><div><span class="step-kicker">START WITH A QUESTION</span><h3>Share the information</h3></div><span class="private-note"><span>●</span> Your input stays on this page in demo mode</span></div>
+        <div class="verify-tabs" role="tablist" aria-label="Information type">
+          <button class="tab active" data-type="message" role="tab" aria-selected="true"><span>▤</span> Message or claim</button>
+          <button class="tab" data-type="link" role="tab" aria-selected="false"><span>↗</span> Website link</button>
+          <button class="tab" data-type="image" role="tab" aria-selected="false"><span>▧</span> Image</button>
+          <button class="tab" data-type="file" role="tab" aria-selected="false"><span>▤</span> Video or document</button>
+        </div>
+        <div class="input-area" id="textInputArea"><label class="input-label" for="claimInput" id="inputLabel">THE MESSAGE OR CLAIM</label><textarea id="claimInput" placeholder="Paste the message, claim, or headline you want to check..."></textarea></div>
+        <div class="upload-area hidden" id="uploadArea"><input type="file" id="fileInput" hidden><div class="upload-icon">↑</div><strong id="uploadTitle">Drop your image here or browse files</strong><p id="uploadDescription">PNG, JPG, WEBP supported</p><button class="browse-btn" id="browseBtn" type="button">CHOOSE FILE</button><div id="fileInfo" class="file-info hidden"></div></div>
+        <div class="verify-bottom"><span id="inputHint">Tip: include the exact wording you saw and where it came from.</span><button id="verifyBtn" class="button primary">CHECK NOW <span>→</span></button></div>
+      </div>
+      <div id="loading" class="loading hidden"><div class="scanner"></div><span>Reviewing your information…</span></div>
+      <div id="result" class="result hidden" aria-live="polite"></div>
+      <p class="demo-disclaimer"><span>ⓘ</span> Demo mode works without API keys. It provides a local review checklist only — no live sources are searched and no factual verdict is generated.</p>
+    </section>
+
+    <section id="how" class="how-section">
+      <div class="section-head reveal"><div class="eyebrow">LESS CONFUSION. MORE CLARITY.</div><h2>A clearer picture,<br><span>one step at a time.</span></h2><p>Advanced tools should make understanding simpler, not more complicated.</p></div>
+      <div class="steps">
+        <article class="step reveal"><div class="step-number">01</div><div class="step-art art-share"><img src="assets/source-check.jpg" alt="A news article being examined" loading="lazy"></div><h3>Share the information</h3><p>Paste a message, enter a link, or choose an image or document you want to examine.</p></article>
+        <article class="step reveal delay-1"><div class="step-number">02</div><div class="step-art art-search"><img src="assets/evidence-search.jpg" alt="Magnifying glass checking online evidence" loading="lazy"></div><h3>Check the evidence</h3><p>Look beyond the headline. Find original sources, compare accounts, and check the context.</p></article>
+        <article class="step reveal delay-2"><div class="step-number">03</div><div class="step-art art-result"><img src="assets/digital-context.jpg" alt="Digital information and context on a smartphone" loading="lazy"></div><h3>Understand the result</h3><p>Separate what is supported from what is uncertain, and decide what deserves your trust.</p></article>
+      </div>
+    </section>
+
+    <section class="method-section">
+      <div class="method-copy reveal"><div class="eyebrow">OUR APPROACH</div><h2>Don't just read<br>the claim. <span>Trace it.</span></h2><p>A useful check starts with a specific claim and follows it back to its original source. Dates, locations, and missing context matter as much as the headline.</p><ul><li>Find the original source and understand what it actually says.</li><li>Compare independent, relevant reporting.</li><li>Look for evidence that supports and challenges the claim.</li><li>Explain what remains uncertain, without guessing.</li></ul></div>
+      <div class="method-card reveal delay-1"><div class="method-card-head"><span>THE EVIDENCE CHECK</span><span class="card-mark">✳</span></div><div class="method-row"><span class="method-icon">◎</span><div><b>Original source</b><small>Where did this information begin?</small></div><span class="row-arrow">↗</span></div><div class="method-row"><span class="method-icon">≋</span><div><b>Independent coverage</b><small>Do reliable sources agree?</small></div><span class="row-arrow">↗</span></div><div class="method-row"><span class="method-icon">◷</span><div><b>Time and context</b><small>Is this current and in context?</small></div><span class="row-arrow">↗</span></div><div class="method-foot"><span class="pulse"></span> CLARITY OVER CERTAINTY</div></div>
+    </section>
+
+    <section id="about" class="about-section"><div class="about-inner reveal"><div class="eyebrow">A SMALL PAUSE. A BIG DIFFERENCE.</div><h2>Think twice.<br><span>Share wisely.</span></h2><p>Truth Lens is built around a simple idea: information deserves a closer look. We encourage curiosity, transparent sources, and responsible sharing — not assumptions or instant judgments.</p><a class="button primary" href="#verify">START A CHECK <span>→</span></a></div><div class="about-side reveal delay-1"><div class="about-stat"><strong>01</strong><span>Pause before sharing</span></div><div class="about-stat"><strong>02</strong><span>Check the original context</span></div><div class="about-stat"><strong>03</strong><span>Be honest about uncertainty</span></div></div></section>
+  </main>
+  <footer><div class="footer-top"><a class="brand" href="#home"><span class="brand-mark"><span></span></span><span>TRUTH LENS<span class="dot">.</span></span></a><p>A little clarity in a world of information.</p><div class="footer-links"><a href="#how">How It Works</a><a href="#about">Methodology</a><a href="#about">Responsible Use</a></div></div><small>© 2026 TRUTH LENS · SEE THE REAL STORY. FOLLOW THE EVIDENCE.</small></footer>
+  <script src="app.js"></script>
+</body>
+</html>
